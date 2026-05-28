@@ -1,0 +1,5 @@
+#!/bin/bash
+
+nu12-pkg-add gdm gnome xorg xorg-server
+nu12-service-enable gdm.service
+sed "s/USER/${USER}/g" $NU12_ARCH_INSTALLATION_PATH/config/gdm/custom.conf | sudo tee /etc/gdm/custom.conf > /dev/null

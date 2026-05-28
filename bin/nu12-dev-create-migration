@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if ! [[ -n ${NU12_ARCH_INSTALLATION_PATH//[[:space:]]/} ]]; then
+  echo "Env var NU12_ARCH_INSTALLATION_PATH not found"
+  exit 1
+fi
+
+echo -n "Migration title: "
+IFS= read -r title
+
+echo -n "Migration description: "
+IFS= read -r description
+
+MIGRATION_PATH="$NU12_ARCH_INSTALLATION_PATH/migrations/$(date +%s)_$($NU12_ARCH_INSTALLATION_PATH/bin/nu12-sanitize-string $title)"
+mkdir -p $MIGRATION_PATH
+echo "echo \"$description\"" >> $MIGRATION_PATH/main.sh
+echo 'exit 0' >> $MIGRATION_PATH/test.sh

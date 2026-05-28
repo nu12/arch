@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "$@" | tr "A-Z" "a-z" | tr "  " " " | tr " " "_" 

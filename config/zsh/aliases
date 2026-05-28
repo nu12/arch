@@ -1,0 +1,2 @@
+alias gcaam="git commit --amend -am"
+alias gbc="git branch --show-current"

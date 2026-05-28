@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# set -eEo pipefail
+
+
+ls $NU12_ARCH_INSTALLATION_PATH/migrations | while IFS= read -r migration; do
+  echo "Migrating $migration..."
+  source $NU12_ARCH_INSTALLATION_PATH/migrations/$migration/main.sh
+  source $NU12_ARCH_INSTALLATION_PATH/migrations/$migration/test.sh
+
+  if [[ "$(echo $?)" == "0" ]]; then
+    touch $NU12_ARCH_STATE/$migration.ok
+  fi
+done

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for pkg in "$@"; do
+  if nu12-mise-missing "$@"; then  
+    mise use -g $pkg
+  fi
+done

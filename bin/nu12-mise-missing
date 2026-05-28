@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for pkg in "$@"; do
+  mise which $pkg &>/dev/null
+  if [[ "$(echo $?)" == "1" ]]; then
+    exit 0
+  fi
+done
+
+exit 1
