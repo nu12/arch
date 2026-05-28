@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nu12-pkg-add networkmanager
+nu12-service-enable NetworkManager.service

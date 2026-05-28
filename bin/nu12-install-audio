@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nu12-pkg-add sof-firmware pipewire pipewire-alsa pipewire-pulse wireplumber

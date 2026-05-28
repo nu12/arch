@@ -1,0 +1,6 @@
+alias gcaam="git commit --amend -am"
+alias gcaa="git commit -a --amend --no-edit"
+alias gbc="git branch --show-current"
+
+alias pbcopy="xsel -b"
+alias pbpaste="xsel -ob"
